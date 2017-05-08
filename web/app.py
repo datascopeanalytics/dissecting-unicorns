@@ -3,11 +3,13 @@ import json
 
 from flask import Flask, request
 from flask import render_template
+from flask_bootstrap import Bootstrap
 
 from flask_restful import Resource, Api
 
 # configure flask app
 app = Flask(__name__)
+Bootstrap(app)
 api = Api(app)
 app.data_folder = os.path.join(app.static_folder, 'data')
 

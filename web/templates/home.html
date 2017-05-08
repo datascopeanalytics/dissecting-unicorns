@@ -1,21 +1,34 @@
-<html>
-<head>
+{% extends "bootstrap/base.html" %}
 
-  <script type="text/javascript" src="//platform.linkedin.com/in.js">
-      api_key:   78b5kvrcpblkhn
-      onLoad:    main
-      authorize: true
-  </script>
-</head>
-<body>
+{% block head %}
+{{super()}}
+<script type="text/javascript" src="//platform.linkedin.com/in.js">
+    api_key:   78b5kvrcpblkhn
+    onLoad:    main
+    authorize: true
+</script>
+{% endblock head %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1>hello world</h1>
+
+      <button class="btn btn-primary">biff</button>
+
+    </div>
+  </div>
+</div>
+
   <!--
      TODO: to store member data we need to clearly state that we are doing so.
      https://developer.linkedin.com/legal/storing-member-data
   -->
   <!-- TODO: only download data on login -->
+{% endblock content %}
 
-  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-  <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
-</body>
-</html>
+{% block scripts %}
+{{super()}}
+<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock scripts %}
