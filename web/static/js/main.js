@@ -8,7 +8,13 @@ function getProfileData() {
     // lots of things available here. more details at:
     // https://developer.linkedin.com/docs/fields/basic-profile
     // http://stackoverflow.com/q/8593144/564709
-    IN.API.Raw("/people/~:(id,picture-url,industry,positions,skills,educations:(id,school-name,degree,field-of-study))?format=json").result(storeProfileData)
+    IN.API.Raw("/people/~:("
+               + "id,"
+               + "industry,"
+               + "positions:(id,title,start-date,end-date,company:(id,name,type,size,industry)),"
+               + "skills:(id,skill:(name)),"
+               + "educations:(id,school-name,degree,field-of-study,start-date,end-date)"
+           + ")?format=json").result(storeProfileData)
 }
 
 function storeProfileData(data) {
