@@ -27,8 +27,8 @@ function storeProfileData(data) {
         data: JSON.stringify(data),
 
         complete: function () {console.log("complete")},
-        success: function () {console.log("success")},
-        error: function () {console.log("error")},
+        success: function () {$("#success").show()},
+        error: function () {$("#error").show()}
     })
 
 }
