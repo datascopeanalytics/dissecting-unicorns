@@ -44,7 +44,18 @@
       </p>
 
       <p>
-        <button class="btn btn-primary">Share your career experience.</button>        
+        <!--
+
+          The standard way of doing this
+          (https://developer.linkedin.com/docs/signin-with-linkedin) has the
+          button disappear if you're already logged in, which is not an
+          appropriate user experience. In that case, the data is automatically
+          downloaded. Here we use a
+
+        -->
+        <button id="share" class="btn btn-primary">
+          Share your anonymous LinkedIn profile information.
+        </button>
       </p>
 
     </div>

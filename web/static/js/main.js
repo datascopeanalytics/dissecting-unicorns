@@ -1,15 +1,17 @@
 function main() {
-    IN.User.authorize(onAuthentication)
+    $("button#share").click(function () {
+        IN.User.authorize(getProfileData);
+    })
 }
 
-function onAuthentication() {
+function getProfileData() {
     // lots of things available here. more details at:
     // https://developer.linkedin.com/docs/fields/basic-profile
     // http://stackoverflow.com/q/8593144/564709
-    IN.API.Raw("/people/~:(id,picture-url,industry,positions,skills,educations:(id,school-name,degree,field-of-study))?format=json").result(storePositionHistory)
+    IN.API.Raw("/people/~:(id,picture-url,industry,positions,skills,educations:(id,school-name,degree,field-of-study))?format=json").result(storeProfileData)
 }
 
-function storePositionHistory(data) {
+function storeProfileData(data) {
     console.log(data);
     console.log('wow');
 
