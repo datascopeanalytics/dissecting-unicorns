@@ -18,8 +18,6 @@ function getProfileData() {
 }
 
 function storeProfileData(data) {
-    console.log(data);
-    console.log('wow');
 
     $.ajax({
         url: "/person",
@@ -32,11 +30,5 @@ function storeProfileData(data) {
         success: function () {console.log("success")},
         error: function () {console.log("error")},
     })
-
-    // $.post(, data, function(d) {console.log('success', d)}, 'json')
-    //     .done(function () {console.log('done')})
-    //     .fail(function () {console.log('fail')});
-
-    console.log('hrmpf');
 
 }
